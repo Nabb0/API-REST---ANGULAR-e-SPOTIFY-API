@@ -1,0 +1,22 @@
+npm i -g @angular/cli
+ng serve --disable-host-check
+
+Crea il progetto 
+ng new BigGames
+
+directory del progetto 
+ cd first-routed-app
+ 
+ng add @ng-bootstrap/ng-bootstrap
+
+Crea un componente
+
+ng generate component
+
+apre il termianl 
+control shift o 
+
+
+bash 
+ ps -a processi attivi 
+ sudo kill -9 nemero processo = uccide il processo 
