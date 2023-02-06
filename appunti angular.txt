@@ -11,7 +11,9 @@ ng add @ng-bootstrap/ng-bootstrap
 
 Crea un componente
 
-ng generate component
+ng generate component nome-componente
+ng g c nome-componente
+
 
 apre il termianl 
 control shift o 
