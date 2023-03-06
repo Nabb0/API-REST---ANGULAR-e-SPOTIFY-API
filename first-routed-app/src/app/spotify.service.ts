@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
 
 //Dichiaro che il servizio è iniettabile agli altri componenti a partire dal componente root
 @Injectable({
@@ -13,8 +15,7 @@ export class SpotifyService {
   searchTrack(query: string) {
     const url = `https://api.spotify.com/v1/search?q=${query}&type=track`;
     const headers = new HttpHeaders({
-      Authorization:' Bearer BQBr9R4czEcnGEfO07tt1AqvR2CNfmFQqbLvgHcJJQJfVBn7nw6c382OHIf4xL6wth8iNjLNX-sszKQptCpqo9TW3avzaw1On4TaJbDnlrrHP97tHiYMnScp_6iYJYpY7pvse1IhnYN6oetf9BNHYQHrpS6ATjugTghQoSA14fj4VOLvxwa3qy3eI3IIDiXDSzUx'
-    });
+      Authorization: environment.oauthToken    });
 
     let obsTracks = this.http.get(url, { headers });
     return obsTracks;
@@ -23,9 +24,7 @@ export class SpotifyService {
   getTrack(id: string) {
     const url = `https://api.spotify.com/v1/tracks/${id}`;
     const headers = new HttpHeaders({
-      Authorization:
-        'Bearer BQBr9R4czEcnGEfO07tt1AqvR2CNfmFQqbLvgHcJJQJfVBn7nw6c382OHIf4xL6wth8iNjLNX-sszKQptCpqo9TW3avzaw1On4TaJbDnlrrHP97tHiYMnScp_6iYJYpY7pvse1IhnYN6oetf9BNHYQHrpS6ATjugTghQoSA14fj4VOLvxwa3qy3eI3IIDiXDSzUx'
-    });
+      Authorization: environment.oauthToken });
     
     return this.http.get(url, { headers });
   }
